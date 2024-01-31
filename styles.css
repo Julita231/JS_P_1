@@ -86,8 +86,12 @@ header img {
   width: 50%;
 }
 
+.income {
+  margin-right: 10px;
+}
 .income-table {
   display: flex;
+  flex-direction: column;
 }
 .income-total {
   display: block;
@@ -95,4 +99,10 @@ header img {
 
 .expense-table {
   display: flex;
+  flex-direction: column;
+}
+
+.form {
+  display: flex;
+  gap: 5px;
 }

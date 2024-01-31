@@ -26,11 +26,16 @@
         <div class="income">
           <h3>PRZYCHODY</h3>
           <div class="income-table">
-            <label for="income-name">Nazwa przychodu:</label>
-            <input type="text" id="income-name" />
-            <label for="income-value">Kwota:</label>
-            <input type="text" id="income-value" />
-            <button id="add-income">Dodaj</button>
+            <form class="form">
+              <input
+                type="text"
+                id="income-name"
+                placeholder="Nazwa przychodu"
+              />
+
+              <input type="text" id="income-value" placeholder="Kwota" />
+              <button id="add-income">Dodaj</button>
+            </form>
             <ul id="income-list">
               Lista
             </ul>
@@ -43,11 +48,16 @@
         <div class="expenses">
           <h3>WYDATKI</h3>
           <div class="expense-table">
-            <label for="expense-name">Nazwa wydatku:</label>
-            <input type="text" id="expense-name" />
-            <label for="expense-value">Kwota:</label>
-            <input type="text" id="expense-value" />
-            <button id="add-expense">Dodaj</button>
+            <form class="form">
+              <input
+                type="text"
+                id="expense-name"
+                placeholder="Nazwa wydatku"
+              />
+
+              <input type="text" id="expense-value" placeholder="Kwota" />
+              <button id="add-expense">Dodaj</button>
+            </form>
             <ul id="expense-list">
               Lista
             </ul>
