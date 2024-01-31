@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Finansowy Kalkulator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -25,7 +31,9 @@
             <label for="income-value">Kwota:</label>
             <input type="text" id="income-value" />
             <button id="add-income">Dodaj</button>
-            <ul id="income-list"></ul>
+            <ul id="income-list">
+              Lista
+            </ul>
             <p class="income-total">
               Suma przychodów: <span id="total-income">0</span>
             </p>
@@ -40,12 +48,19 @@
             <label for="expense-value">Kwota:</label>
             <input type="text" id="expense-value" />
             <button id="add-expense">Dodaj</button>
-            <ul id="expense-list"></ul>
+            <ul id="expense-list">
+              Lista
+            </ul>
             <p>Suma wydatków: <span id="total-expenses">0</span></p>
           </div>
         </div>
       </section>
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js"></script>
   </body>
 </html>
