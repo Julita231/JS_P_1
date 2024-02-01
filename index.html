@@ -31,9 +31,17 @@
                 type="text"
                 id="income-name"
                 placeholder="Nazwa przychodu"
+                required
               />
 
-              <input type="text" id="income-value" placeholder="Kwota" />
+              <input
+                type="number"
+                id="income-value"
+                placeholder="Kwota"
+                required
+                min="0.01"
+                step="0.01"
+              />
               <button id="add-income">Dodaj</button>
             </form>
             <ul id="income-list">
@@ -53,9 +61,17 @@
                 type="text"
                 id="expense-name"
                 placeholder="Nazwa wydatku"
+                required
               />
 
-              <input type="text" id="expense-value" placeholder="Kwota" />
+              <input
+                type="number"
+                id="expense-value"
+                placeholder="Kwota"
+                required
+                min="0.01"
+                step="0.01"
+              />
               <button id="add-expense">Dodaj</button>
             </form>
             <ul id="expense-list">
