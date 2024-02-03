@@ -1,16 +1,35 @@
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 
+const availableAmount = document.getElementById("available-amount");
+
 const incomeForm = document.getElementById("incomeForm");
 const incomeName = document.getElementById("income-name");
 const incomeValue = document.getElementById("income-value");
 const incomeList = document.getElementById("income-list");
+const totalIncome = document.getElementById("total-income");
 const incomeArray = [];
+let incomesSum = 0;
 
 const expenseForm = document.getElementById("expenseForm");
 const expenseName = document.getElementById("expense-name");
 const expenseValue = document.getElementById("expense-value");
 const expenseList = document.getElementById("expense-list");
+const totalExpenses = document.getElementById("total-expenses");
 const expenseArray = [];
+let expenseSum = 0;
+
+// funkcje dodawania:
+const updateAvailableSum = () => {
+  availableAmount.innerText = incomesSum - expenseSum;
+};
+
+const updateIncomeSum = () => {
+  incomesSum = incomeArray.reduce(
+    (acc, currentValue) => acc + currentValue.amount,
+    0
+  );
+  totalIncome.innerText = incomesSum;
+};
 
 incomeForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -55,6 +74,8 @@ const displayIncomes = () => {
     deleteButton.addEventListener("click", () => removeIncome(income.id));
     editButton.addEventListener("click", () => editIncome(income, li));
   });
+  updateIncomeSum();
+  updateAvailableSum();
 };
 
 const removeIncome = (id) => {
@@ -96,22 +117,22 @@ const editIncome = (income, li) => {
     incomeArray.find((item) => {
       if (item.id === income.id) {
         item.name = nameInput.value;
-        item.amount = valueInput.value;
+        item.amount = Number(valueInput.value);
         displayIncomes();
       }
     });
   });
 };
 
-// funkcje dodawania:
-
-const incomesSum = incomeArray.reduce(
-  (acc, currentValue) => acc + currentValue.amount,
-  0
-);
-console.log(incomesSum);
-
 //poniżej js do wydatków
+
+const updateExpenseSum = () => {
+  expenseSum = expenseArray.reduce(
+    (acc, currentValue) => acc + currentValue.amount,
+    0
+  );
+  totalExpenses.innerText = expenseSum;
+};
 
 expenseForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -156,6 +177,8 @@ const displayExpenses = () => {
     deleteButton.addEventListener("click", () => removeExpense(expense.id));
     editButton.addEventListener("click", () => editExpense(expense, li));
   });
+  updateExpenseSum();
+  updateAvailableSum();
 };
 
 const removeExpense = (id) => {
@@ -197,7 +220,7 @@ const editExpense = (expense, li) => {
     expenseArray.find((item) => {
       if (item.id === expense.id) {
         item.name = nameInput.value;
-        item.amount = valueInput.value;
+        item.amount = Number(valueInput.value);
         displayExpenses();
       }
     });
