@@ -105,7 +105,7 @@ const editIncome = (income, li) => {
 
 // funkcje dodawania:
 
-const incomesSum = incomesArr.reduce(
+const incomesSum = incomeArray.reduce(
   (acc, currentValue) => acc + currentValue.amount,
   0
 );
