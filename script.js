@@ -64,7 +64,7 @@ const displayIncomes = () => {
     const deleteButton = document.createElement("button");
 
     nameParagraph.textContent = income.name;
-    valueParagraph.textContent = income.amount;
+    valueParagraph.textContent = `${income.amount} zł`;
 
     editButton.textContent = "Edytuj";
     deleteButton.textContent = "Usuń";
@@ -167,7 +167,7 @@ const displayExpenses = () => {
     const deleteButton = document.createElement("button");
 
     nameParagraph.textContent = expense.name;
-    valueParagraph.textContent = expense.amount;
+    valueParagraph.textContent = `${expense.amount} zł`;
 
     editButton.textContent = "Edytuj";
     deleteButton.textContent = "Usuń";
