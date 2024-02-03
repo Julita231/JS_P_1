@@ -20,7 +20,15 @@ let expenseSum = 0;
 
 // funkcje dodawania:
 const updateAvailableSum = () => {
-  availableAmount.innerText = incomesSum - expenseSum;
+  const availableSum = incomesSum - expenseSum;
+  if (availableSum === 0) {
+    availableAmount.innerText = "Bilans wynosi zero";
+  } else if (availableSum > 0) {
+    availableAmount.innerText = `Możesz jeszcze wydać ${availableSum} złotych`;
+  } else {
+    const absoluteSum = Math.abs(availableSum);
+    availableAmount.innerText = `Bilans jest ujemny. Jesteś na minusie ${absoluteSum} złotych`;
+  }
 };
 
 const updateIncomeSum = () => {
