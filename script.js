@@ -18,7 +18,6 @@ const totalExpenses = document.getElementById("total-expenses");
 const expenseArray = [];
 let expenseSum = 0;
 
-// funkcje dodawania:
 const updateAvailableSum = () => {
   const availableSum = incomesSum - expenseSum;
   if (availableSum === 0) {
@@ -88,9 +87,7 @@ const displayIncomes = () => {
 
 const removeIncome = (id) => {
   const indexToRemove = incomeArray.findIndex((item) => item.id === id);
-  console.log(indexToRemove);
   incomeArray.splice(indexToRemove, 1);
-  console.log(removeIncome);
   displayIncomes();
 };
 
@@ -102,7 +99,12 @@ const editIncome = (income, li) => {
   const cancelButton = document.createElement("button");
 
   nameInput.value = income.name;
+  nameInput.required = true;
   valueInput.value = income.amount;
+  valueInput.type = "number";
+  valueInput.min = "0.01";
+  valueInput.step = "0.01";
+  valueInput.required = true;
   saveButton.textContent = "Zapisz";
   saveButton.type = "submit";
   cancelButton.textContent = "Anuluj";
@@ -131,8 +133,6 @@ const editIncome = (income, li) => {
     });
   });
 };
-
-//poniżej js do wydatków
 
 const updateExpenseSum = () => {
   expenseSum = expenseArray.reduce(
@@ -205,7 +205,12 @@ const editExpense = (expense, li) => {
   const cancelButton = document.createElement("button");
 
   nameInput.value = expense.name;
+  nameInput.required = true;
   valueInput.value = expense.amount;
+  valueInput.type = "number";
+  valueInput.min = "0.01";
+  valueInput.step = "0.01";
+  valueInput.required = true;
   saveButton.textContent = "Zapisz";
   saveButton.type = "submit";
   cancelButton.textContent = "Anuluj";
